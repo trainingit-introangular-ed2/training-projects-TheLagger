@@ -1,0 +1,13 @@
+#footer {
+  background: #111111;
+  color: rgba(255, 255, 255);
+  cursor: default;
+  height: 50px;
+  left: 0;
+  line-height: 50px;
+  top: 100;
+  width: 100%;
+}
+#titulo {
+  padding: 0 10px;
+}
