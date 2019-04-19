@@ -1,0 +1,14 @@
+<form>
+  <fieldset>
+    <legend>Contact Form</legend>
+    <label for="name">Nombre proyecto</label>
+    <input name="name"
+           type="text"
+           [(ngModel)]="projectName"
+           placeholder="Nombre proyecto" />
+
+  </fieldset>
+  <input value="Guardar"
+         type="submit"
+         (click)="newProject()" />
+</form>

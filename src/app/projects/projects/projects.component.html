@@ -1,0 +1,12 @@
+<p>
+  Proyectos actualmente guardados:
+</p>
+
+<ul *ngIf="projects.length>0;">
+  <li *ngFor="let project of projects">
+    <a routerLink="{{ project.id }}"><span>{{ project.name }}</span></a>
+  </li>
+</ul>
+
+<button type="button"
+        routerLink="new">Nuevo Proyecto</button>

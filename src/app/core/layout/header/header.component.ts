@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faHome, faList } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title = '¡Bienvenido a la aplicación de práctica de ángular!';
+  title = '¡Bienvenido a la aplicación de práctica de Angular!';
+  homeIcon = faHome;
+  listIcon = faList;
 
   constructor() {}
 
