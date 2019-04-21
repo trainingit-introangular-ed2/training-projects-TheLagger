@@ -1,11 +1,10 @@
 #cuerpoPresentacion {
-  padding-top: 60px;
+  padding-top: 50px;
   background-image: url('../../../../assets/main_background.png');
   background-size: cover;
 }
 
 #espacioProyectos {
-  margin: 10px;
-  border: 1px solid gray;
+  margin: 20px;
   height: 700px;
 }

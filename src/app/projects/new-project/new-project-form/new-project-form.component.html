@@ -1,0 +1,17 @@
+<form>
+  <fieldset id="bloqueNuevoProyecto">
+    <legend>Nuevo proyecto</legend>
+    <label for="name">Nombre proyecto</label>
+    <input name="name"
+           type="text"
+           [(ngModel)]="nombreProyecto"
+           placeholder="Nombre proyecto" />
+  </fieldset>
+  <div id="mensajeDiv"
+       [hidden]="nuevoId ==''"><b>Se ha creado correctamente un proyecto con ID: {{nuevoId}}</b></div>
+  <input value="Guardar"
+         id="btnGuardar"
+         type="button"
+         (click)="nuevoproyecto.emit({name: nombreProyecto})" />
+
+</form>

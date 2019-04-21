@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { ProjectsService } from '../projects.service';
 
 @Component({
   selector: 'app-new-project',
@@ -7,20 +8,20 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./new-project.component.css']
 })
 export class NewProjectComponent implements OnInit {
-  public projectName: string;
-  public numProyectos = 0;
+  public nuevoId: string;
+  public project: any;
 
-  constructor() {}
+  constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    this.numProyectos = environment.projects.length;
+    this.project = { id: environment.projects.length, name };
+    this.nuevoId = '';
   }
 
-  public newProject() {
-    const id = environment.projects.length;
-    const name = this.projectName;
-    const nuevoProyecto = { id, name };
-    environment.projects.push(nuevoProyecto);
-    this.numProyectos = environment.projects.length;
+  public newProject(data: any) {
+    this.project.name = data.name;
+    this.projectsService.addProject(this.project);
+    this.nuevoId = this.project.id;
+    this.project.id++;
   }
 }

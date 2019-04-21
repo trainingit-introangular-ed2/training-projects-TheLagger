@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-viewer-project',
@@ -7,9 +8,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./viewer-project.component.css']
 })
 export class ViewerProjectComponent implements OnInit {
-  public projectId = '';
+  public project: any;
+
   constructor(activateRoute: ActivatedRoute) {
-    this.projectId = activateRoute.snapshot.params['id'];
+    this.project = environment.projects.find(project => project.id == activateRoute.snapshot.params['id']);
   }
   ngOnInit() {}
 }

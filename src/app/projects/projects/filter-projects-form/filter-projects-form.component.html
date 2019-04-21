@@ -1,0 +1,8 @@
+<fieldset>
+  <legend>Filtros</legend>
+  <label for="name">Nombre</label>
+  <input name="name"
+         type="text"
+         [(ngModel)]="filtroNombre"
+         (keyup)="filtrarProyectos.emit({name: filtroNombre})" />
+</fieldset>

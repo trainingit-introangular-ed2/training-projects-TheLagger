@@ -1,12 +1,6 @@
-<p>
-  Proyectos actualmente guardados:
-</p>
+<app-filter-projects-form (filtrarProyectos)="filtrarProyectos($event)"></app-filter-projects-form>
+<app-projects-list [projects]="projectsShown"></app-projects-list>
 
-<ul *ngIf="projects.length>0;">
-  <li *ngFor="let project of projects">
-    <a routerLink="{{ project.id }}"><span>{{ project.name }}</span></a>
-  </li>
-</ul>
 
 <button type="button"
-        routerLink="new">Nuevo Proyecto</button>
+        routerLink="new">Añadir proyecto</button>
