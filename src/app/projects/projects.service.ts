@@ -11,6 +11,10 @@ export class ProjectsService {
     environment.projects.push({ ...project });
   }
 
+  public getProjects() {
+    return environment.projects;
+  }
+
   public filterProjects(filtros: any) {
     return environment.projects.filter(project => project.name.toLowerCase().includes(filtros.name.toLowerCase()));
   }
