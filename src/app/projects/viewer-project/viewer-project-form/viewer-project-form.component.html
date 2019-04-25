@@ -1,5 +1,5 @@
 Visor de proyecto:
-<ul>
-  <li>ID: {{projectId}}</li>
-  <li>Nombre: {{projectName}}</li>
+<ul *ngFor="let project of project | async">
+  <li>ID: {{project.id}}</li>
+  <li>Nombre: {{project.name}}</li>
 </ul>

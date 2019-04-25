@@ -1,6 +1,11 @@
 <form>
   <fieldset id="bloqueNuevoProyecto">
     <legend>Nuevo proyecto</legend>
+    <label for="id">ID proyecto</label>
+    <input name="id"
+           type="number"
+           [(ngModel)]="idProyecto"
+           placeholder="ID proyecto" />
     <label for="name">Nombre proyecto</label>
     <input name="name"
            type="text"
@@ -8,10 +13,10 @@
            placeholder="Nombre proyecto" />
   </fieldset>
   <div id="mensajeDiv"
-       [hidden]="nuevoId ==''"><b>Se ha creado correctamente un proyecto con ID: {{nuevoId}}</b></div>
+       [hidden]="!nuevoId"><b>Se ha añadido correctamente un proyecto con ID: {{idProyecto}}</b></div>
   <input value="Guardar"
          id="btnGuardar"
          type="button"
-         (click)="nuevoproyecto.emit({name: nombreProyecto})" />
+         (click)="nuevoproyecto.emit({id: idProyecto, name: nombreProyecto})" />
 
 </form>

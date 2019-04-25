@@ -2,8 +2,8 @@
   Proyectos actualmente guardados:
 </p>
 
-<ul *ngIf="projects.length>0;">
-  <li *ngFor="let project of projects">
+<ul>
+  <li *ngFor="let project of projects | async">
     <a routerLink="{{ project.id }}"><span>{{ project.name }}</span></a>
   </li>
 </ul>
