@@ -7,11 +7,11 @@ import { ProjectsService } from '../../projects/projects.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public numProjects: any;
+  public numProjects$: any;
 
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    this.numProjects = this.projectsService.numOfProyects();
+    this.numProjects$ = this.projectsService.numOfProyects();
   }
 }

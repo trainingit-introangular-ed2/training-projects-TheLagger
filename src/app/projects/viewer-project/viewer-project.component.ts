@@ -8,10 +8,10 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./viewer-project.component.css']
 })
 export class ViewerProjectComponent implements OnInit {
-  public project: any;
+  public project$: any;
 
   constructor(activateRoute: ActivatedRoute, projectsService: ProjectsService) {
-    this.project = projectsService.getProject(activateRoute.snapshot.params['id']);
+    this.project$ = projectsService.getProject(activateRoute.snapshot.params['id']);
   }
   ngOnInit() {}
 }

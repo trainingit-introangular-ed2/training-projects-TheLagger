@@ -3,7 +3,7 @@
 </p>
 
 <ul>
-  <li *ngFor="let project of projects | async">
-    <a routerLink="{{ project.id }}"><span>{{ project.name }}</span></a>
+  <li *ngFor="let project of projects$ | async">
+    <a routerLink="{{ project._id }}"><span>{{ project.name }}</span></a>
   </li>
 </ul>

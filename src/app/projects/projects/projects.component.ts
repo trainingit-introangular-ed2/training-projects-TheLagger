@@ -7,15 +7,15 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-  public projectsShown: any;
+  public projectsShown$: any;
 
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    this.projectsShown = this.projectsService.getProjects();
+    this.projectsShown$ = this.projectsService.getProjects();
   }
 
   public filtrarProyectos(filtros: any) {
-    this.projectsShown = this.projectsService.filterProjects(filtros);
+    this.projectsShown$ = this.projectsService.filterProjects(filtros);
   }
 }

@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent implements OnInit {
-  @Input() public projects: any;
+  @Input() public projects$: any;
 
   constructor() {}
 

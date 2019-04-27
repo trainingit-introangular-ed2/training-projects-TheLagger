@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  @Input() numProjects: number;
+  @Input() numProjects$: number;
 
   constructor() {}
 

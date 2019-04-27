@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./viewer-project-form.component.css']
 })
 export class ViewerProjectFormComponent implements OnInit {
-  @Input() public project: any;
+  @Input() public project$: any;
 
   constructor() {}
 

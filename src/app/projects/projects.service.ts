@@ -11,7 +11,7 @@ export class ProjectsService {
   constructor(private httpClient: HttpClient) {}
 
   public addProject(project: any) {
-    this.httpClient.post(this.urlapi, project).subscribe();
+    return this.httpClient.post(this.urlapi, project).pipe(map((projectAdded: any) => projectAdded._id));
   }
 
   public getProjects() {
@@ -19,7 +19,7 @@ export class ProjectsService {
   }
 
   public getProject(id: number) {
-    return this.httpClient.get(this.urlapi).pipe(map((projects: any) => projects.filter(project => project.id == id)));
+    return this.httpClient.get(this.urlapi).pipe(map((projects: any) => projects.filter(project => project._id == id)));
   }
 
   public filterProjects(filtros: any) {

@@ -7,15 +7,13 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./new-project.component.css']
 })
 export class NewProjectComponent implements OnInit {
-  public project: any;
-  public nuevoId: number;
+  public nuevoId$: any;
 
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {}
 
   public newProject(data: any) {
-    this.projectsService.addProject(data);
-    this.nuevoId = data.id;
+    this.nuevoId$ = this.projectsService.addProject(data);
   }
 }

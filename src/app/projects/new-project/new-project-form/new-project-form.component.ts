@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class NewProjectFormComponent implements OnInit {
   public idProyecto: number;
   public nombreProyecto: string;
-  @Input() public nuevoId: number;
+  @Input() public nuevoId$: number;
   @Output() public nuevoproyecto = new EventEmitter();
 
   constructor() {}
