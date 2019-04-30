@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-project-form',
@@ -6,9 +7,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./new-project-form.component.css']
 })
 export class NewProjectFormComponent implements OnInit {
-  public idProyecto: number;
-  public nombreProyecto: string;
   @Input() public nuevoId$: number;
+  @Input() public form: FormGroup;
+  @Input() public errorFunction: Function;
   @Output() public nuevoproyecto = new EventEmitter();
 
   constructor() {}

@@ -1,17 +1,24 @@
-<form>
+<form [formGroup]="form">
   <fieldset id="bloqueNuevoProyecto">
     <legend>Nuevo proyecto</legend>
     <label for="name">Nombre proyecto</label>
     <input name="name"
            type="text"
-           [(ngModel)]="nombreProyecto"
+           formControlName="name"
            placeholder="Nombre proyecto" />
+    <br>
+    <div *ngFor="let error of errorFunction('name')">
+      <span class="errorMessage">{{error}}</span>
+      <br>
+    </div>
+
   </fieldset>
   <div id="mensajeDiv"
        [hidden]="!nuevoId$"><b>Se ha añadido correctamente un proyecto con ID: {{nuevoId$ | async}}</b></div>
   <input value="Guardar"
          id="btnGuardar"
          type="button"
-         (click)="nuevoproyecto.emit({name: nombreProyecto})" />
+         [disabled]="form.invalid"
+         (click)="nuevoproyecto.emit()" />
 
 </form>

@@ -12,3 +12,6 @@ input {
 #mensajeDiv {
   margin-left: 5px;
 }
+.errorMessage {
+  color: red;
+}

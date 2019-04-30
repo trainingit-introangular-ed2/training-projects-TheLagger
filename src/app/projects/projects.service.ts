@@ -23,14 +23,25 @@ export class ProjectsService {
   }
 
   public filterProjects(filtros: any) {
-    return this.httpClient
-      .get(this.urlapi)
-      .pipe(
-        map((projects: any) => projects.filter(project => project.name.toLowerCase().includes(filtros.name.toLowerCase())))
-      );
+    return this.httpClient.get(this.urlapi).pipe(
+      map((projects: any) => projects.filter(project => this.filterByProperties(project, filtros)))
+      //projects.filter(project => project.name && project.name.toLowerCase().includes(filtros.name.toLowerCase()))
+    );
   }
 
   public numOfProyects() {
     return this.httpClient.get(this.urlapi).pipe(map((projects: any) => projects.length));
+  }
+
+  private filterByProperties(project, filters) {
+    for (const filterProperty of Object.getOwnPropertyNames(filters)) {
+      if (
+        filters[filterProperty] &&
+        (!project[filterProperty] || !project[filterProperty].toLowerCase().includes(filters[filterProperty].toLowerCase()))
+      ) {
+        return false;
+      }
+    }
+    return true;
   }
 }
