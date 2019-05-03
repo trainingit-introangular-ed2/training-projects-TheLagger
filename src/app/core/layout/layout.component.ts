@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component } from '@angular/core';
+import { faHome, faList, faPlus, faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
+  public homeIcon = faHome;
+  public projectIcon = faProjectDiagram;
+  public listIcon = faList;
+  public newIcon = faPlus;
+  public showSubmenu = false;
 
-  constructor() { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(map(result => result.matches));
 
-  ngOnInit() {
-  }
-
+  constructor(private breakpointObserver: BreakpointObserver) {}
 }

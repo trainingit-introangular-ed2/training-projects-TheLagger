@@ -1,3 +1,73 @@
-<app-header></app-header>
-<app-main></app-main>
-<app-footer></app-footer>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer
+               class="sidenav"
+               fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item
+         routerLink="/"
+         routerLinkActive="router-link-active"
+         class="button">
+        <div class="divIcono">
+          <fa-icon [icon]="homeIcon"
+                   class="fa-2x"></fa-icon>
+        </div>
+        <span class="textoIcono">Inicio</span>
+      </a>
+
+      <mat-list-item>
+        <div class="divIcono">
+          <fa-icon [icon]="projectIcon"
+                   class="fa-2x"></fa-icon>
+        </div>
+        <span class="textoIcono">Proyectos</span>
+        <button mat-button
+                mat-icon-button
+                (click)="showSubmenu = !showSubmenu">
+          <mat-icon class="menu-button"
+                    [ngClass]="{'rotated' : showSubmenu}">expand_more</mat-icon>
+        </button>
+      </mat-list-item>
+      <div class="submenu"
+           [ngClass]="{'expanded' : showSubmenu}">
+        <mat-list-item> <a mat-list-item
+             routerLink="/"
+             routerLinkActive="router-link-active"
+             class="button">
+            <div class="divIcono">
+              <fa-icon [icon]="listIcon"
+                       class="fa-2x"></fa-icon>
+            </div>
+            <span class="textoIcono">Lista</span>
+          </a></mat-list-item>
+        <mat-list-item> <a mat-list-item
+             routerLink="/"
+             routerLinkActive="router-link-active"
+             class="button">
+            <div class="divIcono">
+              <fa-icon [icon]="newIcon"
+                       class="fa-2x"></fa-icon>
+            </div>
+            <span class="textoIcono">Nuevo</span>
+          </a></mat-list-item>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>training-projects</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-main></app-main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

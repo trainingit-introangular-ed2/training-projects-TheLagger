@@ -8,8 +8,8 @@ import { faHome, faList } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   title = '¡Bienvenido a la aplicación de práctica de Angular!';
-  homeIcon = faHome;
-  listIcon = faList;
+  public homeIcon = faHome;
+  public listIcon = faList;
 
   constructor() {}
 
