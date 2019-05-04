@@ -18,15 +18,14 @@
         <span class="textoIcono">Inicio</span>
       </a>
 
-      <mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu">
         <div class="divIcono">
           <fa-icon [icon]="projectIcon"
                    class="fa-2x"></fa-icon>
         </div>
         <span class="textoIcono">Proyectos</span>
         <button mat-button
-                mat-icon-button
-                (click)="showSubmenu = !showSubmenu">
+                mat-icon-button>
           <mat-icon class="menu-button"
                     [ngClass]="{'rotated' : showSubmenu}">expand_more</mat-icon>
         </button>
@@ -34,24 +33,24 @@
       <div class="submenu"
            [ngClass]="{'expanded' : showSubmenu}">
         <mat-list-item> <a mat-list-item
-             routerLink="/"
+             routerLink="projects"
              routerLinkActive="router-link-active"
              class="button">
-            <div class="divIcono">
+            <div class="divIcono divIconoSubmenu">
               <fa-icon [icon]="listIcon"
-                       class="fa-2x"></fa-icon>
+                       class="fa-1x"></fa-icon>
             </div>
-            <span class="textoIcono">Lista</span>
+            <span class="textoIconoSubmenu">Lista proyectos</span>
           </a></mat-list-item>
         <mat-list-item> <a mat-list-item
-             routerLink="/"
+             routerLink="projects/new"
              routerLinkActive="router-link-active"
              class="button">
-            <div class="divIcono">
+            <div class="divIcono divIconoSubmenu">
               <fa-icon [icon]="newIcon"
-                       class="fa-2x"></fa-icon>
+                       class="fa-1x"></fa-icon>
             </div>
-            <span class="textoIcono">Nuevo</span>
+            <span class="textoIconoSubmenu">Nuevo proyecto</span>
           </a></mat-list-item>
       </div>
     </mat-nav-list>
