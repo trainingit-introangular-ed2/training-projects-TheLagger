@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatTableModule } from '@angular/material';
 import { InterceptorService } from './interceptor.service';
 import { NewProjectFormComponent } from './new-project/new-project-form/new-project-form.component';
 import { NewProjectComponent } from './new-project/new-project.component';
@@ -24,7 +25,15 @@ import { ViewerProjectComponent } from './viewer-project/viewer-project.componen
     ProjectsListComponent,
     ViewerProjectFormComponent
   ],
-  imports: [CommonModule, ProjectsRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ProjectsRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatButtonModule
+  ],
   providers: [
     ProjectsService,
     {

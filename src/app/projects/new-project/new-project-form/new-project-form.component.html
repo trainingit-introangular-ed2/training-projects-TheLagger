@@ -15,10 +15,11 @@
   </fieldset>
   <div id="mensajeDiv"
        [hidden]="!nuevoId$"><b>Se ha añadido correctamente un proyecto con ID: {{nuevoId$ | async}}</b></div>
-  <input value="Guardar"
-         id="btnGuardar"
-         type="button"
-         [disabled]="form.invalid"
-         (click)="nuevoproyecto.emit()" />
+
+  <button mat-raised-button
+          id="btnGuardar"
+          type="button"
+          [disabled]="form.invalid"
+          (click)="nuevoproyecto.emit()">Guardar</button>
 
 </form>

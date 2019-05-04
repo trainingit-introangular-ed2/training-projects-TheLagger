@@ -2,8 +2,21 @@
   Proyectos actualmente guardados:
 </p>
 
-<ul>
-  <li *ngFor="let project of projects$ | async">
-    <a routerLink="{{ project._id }}"><span>{{ project.name }}</span></a>
-  </li>
-</ul>
+<table mat-table
+       [dataSource]="dataSource"
+       class="mat-elevation-z8">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell
+        *matHeaderCellDef> Nombre </th>
+    <td mat-cell
+        *matCellDef="let project"
+        routerLink="{{ project._id }}"> {{project.name}} </td>
+  </ng-container>
+
+  <tr mat-header-row
+      class="cabeceraTabla"
+      *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row
+      *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

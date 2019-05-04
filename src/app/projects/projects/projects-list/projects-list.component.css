@@ -1,0 +1,19 @@
+table {
+  width: 50%;
+  /* row spacing / margin */
+  border-spacing: 2px 30px 30px 133px !important;
+}
+tr:hover:not(.cabeceraTabla) {
+  border: solid thin;
+  cursor: pointer;
+}
+tr:hover:not(.cabeceraTabla) td {
+  border-bottom: 2px solid #00ced1;
+  border-top: 2px solid #00ced1;
+}
+tr:hover:not(.cabeceraTabla) td:first-child {
+  border-left: 2px solid #00ced1;
+}
+tr:hover:not(.cabeceraTabla) td:last-child {
+  border-right: 2px solid #00ced1;
+}
