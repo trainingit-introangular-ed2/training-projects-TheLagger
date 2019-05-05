@@ -35,7 +35,7 @@ export class NewProjectComponent implements OnInit {
     let errors = null;
 
     if (!/^[A-Z]/.test(name[0])) {
-      errors = { ...errors, firstLetter: 'Es obligatorio que el primer caracter sea una letra mayúscula' };
+      errors = { ...errors, firstLetter: 'Es obligatorio que el primer carácter sea una letra mayúscula' };
     }
     if (name.length < this.nameMinLength) {
       errors = { ...errors, minLength: 'El nombre debe tener una longitud mínima de ' + this.nameMinLength };
