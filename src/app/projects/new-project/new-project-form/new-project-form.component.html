@@ -1,18 +1,17 @@
 <form [formGroup]="form">
-  <fieldset id="bloqueNuevoProyecto">
-    <legend>Nuevo proyecto</legend>
-    <label for="name">Nombre proyecto</label>
+  <mat-form-field>
     <input name="name"
+           matInput
            type="text"
            formControlName="name"
            placeholder="Nombre proyecto" />
+  </mat-form-field>
+  <br>
+  <div *ngFor="let error of errorFunction('name')">
+    <span class="errorMessage">{{error}}</span>
     <br>
-    <div *ngFor="let error of errorFunction('name')">
-      <span class="errorMessage">{{error}}</span>
-      <br>
-    </div>
+  </div>
 
-  </fieldset>
   <div id="mensajeDiv"
        [hidden]="!nuevoId$"><b>Se ha añadido correctamente un proyecto con ID: {{nuevoId$ | async}}</b></div>
 

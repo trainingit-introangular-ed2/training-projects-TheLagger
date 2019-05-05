@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatTableModule } from '@angular/material';
 import { InterceptorService } from './interceptor.service';
 import { NewProjectFormComponent } from './new-project/new-project-form/new-project-form.component';
 import { NewProjectComponent } from './new-project/new-project.component';
@@ -32,7 +32,8 @@ import { ViewerProjectComponent } from './viewer-project/viewer-project.componen
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [
     ProjectsService,

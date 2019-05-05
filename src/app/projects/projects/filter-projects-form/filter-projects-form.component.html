@@ -1,8 +1,10 @@
 <fieldset>
   <legend>Filtros</legend>
-  <label for="name">Nombre</label>
-  <input name="name"
-         type="text"
-         [(ngModel)]="filtroNombre"
-         (keyup)="filtrarProyectos.emit({name: filtroNombre})" />
+  <mat-form-field>
+    <input matInput
+           placeholder="Nombre"
+           [(ngModel)]="filtroNombre"
+           (keyup)="filtrarProyectos.emit({name: filtroNombre})"
+           value="">
+  </mat-form-field>
 </fieldset>
